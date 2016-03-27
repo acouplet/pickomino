@@ -6,5 +6,5 @@ OBJ = Player.o Tile.o Dice.o Game.o main.o
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-pikomino: $(OBJ)
+pickomino: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS)
