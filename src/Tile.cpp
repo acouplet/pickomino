@@ -20,3 +20,12 @@ int Tile::get_value() const{
 	return 1;
 }
 
+bool operator< (const Tile &left, const Tile &right){
+    return left.get_number() < right.get_number();
+}
+
+std::ostream &operator<<(std::ostream &os, Tile const &p) { 
+	os << "[" << p.get_number() << ";" << p.get_value() << "]";
+	return os;
+}
+

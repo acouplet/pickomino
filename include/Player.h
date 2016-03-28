@@ -12,14 +12,20 @@
 
 class Player {
 	public:
+		// Constructor
 		Player(int id, std::string name);
-		int get_id() const;
-		std::string get_name() const;
-		int get_score() const;
-        Tile get_top() const;
-		int get_nb_tiles() const;
-		void push_tile(Tile t);
-		Tile pop_tile();
+		
+		// Get functions
+		int 		get_id() 			const;
+		std::string get_name() 			const;
+		int 		get_score() 		const;
+        Tile 		get_top() 			const;
+		int 		get_nb_tiles() 		const;
+		
+		// Modifiers
+		void 		push_tile(Tile t);
+		Tile 		pop_tile();
+		
 	private:
 		int id;
 		int score;

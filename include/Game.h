@@ -15,9 +15,12 @@ class Game {
 	
 	private:
 		int nb_players;
+		int nb_dices;
 		std::vector<Player> players;
 		// std::vector<Dice> dices;
 		std::set<Tile> tiles;
 };
+
+std::ostream &operator<<(std::ostream &os, Tile const &m);
 
 #endif

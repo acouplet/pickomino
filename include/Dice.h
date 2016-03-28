@@ -7,9 +7,15 @@
 
 class Dice {
 	public:
+		// Constructor
 		Dice();
+		
+		// Get functions
 		int get_face();
+		
+		// Modifiers
 	    void roll();
+	    
 	private:
 		int face;
 };

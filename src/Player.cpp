@@ -1,7 +1,7 @@
 #include "Player.h"
 using namespace std;
 
-Player::Player(int arg_id, std::string arg_name) {
+Player::Player(int arg_id, string arg_name) {
 	id = arg_id;
 	name = arg_name;
 	score = 0;
@@ -37,7 +37,7 @@ Tile Player::pop_tile() {
     return t;
 }
 	
-std::ostream &operator<<(std::ostream &os, Player const &p) { 
+ostream &operator<<(ostream &os, Player const &p) { 
     os << "[id:" << p.get_id() << ", " << p.get_name() << "] " << p.get_nb_tiles() << " tiles. ";
     if (p.get_nb_tiles() != 0)
 		os << "Last tile : number = " << p.get_top().get_number() << "; value = " << p.get_top().get_value();
