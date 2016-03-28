@@ -3,10 +3,11 @@
 
 #include <string>
 #include <vector>
+#include <set>
 #include <stack>
 #include <iostream>
-#include "include/Tile.h"
-#include "include/Dice.h"
+#include "Tile.h"
+#include "Dice.h"
 
 
 class Player {
@@ -16,7 +17,7 @@ class Player {
 		std::string get_name() const;
 		int get_score() const;
         Tile get_top() const;
-		// int get_nb_tiles() const; utile ?
+		int get_nb_tiles() const;
 		void push_tile(Tile t);
 		Tile pop_tile();
 	private:

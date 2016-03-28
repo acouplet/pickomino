@@ -6,14 +6,14 @@ OBJDIR = ../obj
 LIBDIR = ../lib
 
 CC=g++
-CFLAGS=-Wall -I$(INCDIR)
+CFLAGS=-std=c++11 -Wall -I$(INCDIR)
 
 LIBS=-lm
 
 _DEPS = Dice.h Game.h Player.h Tile.h
 DEPS = $(patsubst %,$(INCDIR)/%,$(_DEPS))
 
-_OBJ = Dice.o Game.o Player.o Tile.o main.o
+_OBJ = Dice.o Game.o Player.o Tile.o test.o
 OBJ = $(patsubst %,$(OBJDIR)/%,$(_OBJ))
 
 

@@ -6,7 +6,7 @@ OBJDIR = ../obj
 LIBDIR = ../lib
 
 CC=g++
-CFLAGS=-Wall -I$(INCDIR)
+CFLAGS=-std=c++11 -Wall -I$(INCDIR)
 
 LIBS=-lm
 

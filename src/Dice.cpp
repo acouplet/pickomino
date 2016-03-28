@@ -1,5 +1,5 @@
-#include "include/constants.h"
-#include "include/Dice.h"
+
+#include "Dice.h"
 
 using namespace std;
 

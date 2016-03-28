@@ -1,10 +1,10 @@
-#include "include/Player.h"
+#include "Player.h"
 using namespace std;
 
-Player::Player(int id, std::string name) {
-	this.id = id;
-	this.name = name;
-	this.score = 0;
+Player::Player(int arg_id, std::string arg_name) {
+	id = arg_id;
+	name = arg_name;
+	score = 0;
 }
 
 int  Player::get_id() const{
@@ -19,7 +19,7 @@ int Player::get_score() const{
 	return score;
 }
 
-Tile get_top() const {
+Tile Player::get_top() const {
     return tiles.top();
 }
 
@@ -40,7 +40,7 @@ Tile Player::pop_tile() {
 std::ostream &operator<<(std::ostream &os, Player const &p) { 
     os << "[id:" << p.get_id() << ", " << p.get_name() << "] " << p.get_nb_tiles() << " tiles. ";
     if (p.get_nb_tiles() != 0)
-		os << "Last tile : number = " << p.get_tile().get_number() << "; value = " << p.get_tile().get_value();
+		os << "Last tile : number = " << p.get_top().get_number() << "; value = " << p.get_top().get_value();
 	return os;
 }
 

@@ -4,13 +4,13 @@
 #include <iostream>
 #include <vector>
 #include <set>
-#include "include/Player.h"
-#include "include/Dice.h"
-#include "include/Tile.h"
+#include "Player.h"
+#include "Dice.h"
+#include "Tile.h"
 
 class Game {
 	public:
-		Game(vector<string> names);
+		Game(std::vector<std::string> names);
 		void print_players();
 	
 	private:
