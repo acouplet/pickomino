@@ -7,10 +7,10 @@
 class Dice {
 	public:
 		Dice();
-		int get_value();
-	
+		int get_face();
+	    void roll();
 	private:
-		int value;
+		int face;
 };
 
 #endif

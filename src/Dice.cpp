@@ -1,13 +1,17 @@
-#include "Dice.h"
+#include "include/constants.h"
+#include "include/Dice.h"
 
 using namespace std;
 
 Dice::Dice() {
-	value = rand() % 6 + 1;
+    roll();
 }
 
-int Dice::get_value(){
-	return value;
+int Dice::get_face() {
+	return face;
 }
 
+void Dice::roll() {
+    face = rand() % NB_FACES + 1;
+}
 
