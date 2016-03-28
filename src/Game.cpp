@@ -1,10 +1,12 @@
-#include "Game.h"
+#include "include/Game.h"
 
 using namespace std;
 
-Game::Game(vector<Player> p) {
-	nb_players = p.size();
-	players = p;
+Game::Game(vector<string> names) {
+	nb_players = names.size();
+    for(int id = 0; id < nb_players; ++id)
+        players.push_back(new Player(id, names[id]));
+    // initialiser tiles
 }
 
 void print_players(){
