@@ -1,7 +1,7 @@
-TARGET = pickomino
+TARGET = pickomino.test
 INCDIR = ../include
 BINDIR = ../bin
-SRCDIR = .
+SRCDIR = ../src
 OBJDIR = ../obj
 LIBDIR = ../lib
 
@@ -19,6 +19,9 @@ OBJ = $(patsubst %,$(OBJDIR)/%,$(_OBJ))
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
+	
+$(OBJDIR)/%.o: %.cpp $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
 
 $(BINDIR)/$(TARGET): $(OBJ)
 	g++ -o $@ $^ $(CFLAGS) $(LIBS)
@@ -27,3 +30,4 @@ $(BINDIR)/$(TARGET): $(OBJ)
 
 clean:
 	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ 
+
