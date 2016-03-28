@@ -5,8 +5,8 @@
 #include <vector>
 #include <stack>
 #include <iostream>
-#include "Tile.h"
-#include "Dice.h"
+#include "include/Tile.h"
+#include "include/Dice.h"
 
 
 class Player {
@@ -14,20 +14,17 @@ class Player {
 		Player(int id, std::string name);
 		int get_id() const;
 		std::string get_name() const;
-		Tile get_tile() const;
 		int get_score() const;
-		int get_nb_tiles() const;
+        Tile get_top() const;
+		// int get_nb_tiles() const; utile ?
 		void push_tile(Tile t);
-		void pop_tile();
-	
+		Tile pop_tile();
 	private:
 		int id;
 		int score;
 		std::string name;
 		std::stack<Tile> tiles;
-		std::vector<Dice> dices;
-		
-	
+		std::multiset<Dice> dice;
 };
 
 std::ostream &operator<<(std::ostream &os, Player const &m);
