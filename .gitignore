@@ -36,3 +36,13 @@ pickomino
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Ignore the build and lib dirs #
+#################################
+build
+lib/*
+
+# Ignore any executables #
+##########################
+bin/*
+
