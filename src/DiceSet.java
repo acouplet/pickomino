@@ -49,6 +49,11 @@ class DiceSet {
             return 0;
     }
 
+    public void remove(Die d) {
+        if(inSet(d))
+            addMultiple(d, -1);
+    }
+
     public void removeAll(Die d) {
         nbDice -= getFrequency(d);
         frequency.remove(d);
@@ -61,11 +66,27 @@ class DiceSet {
         return false;
     }
 
+    public boolean hasWorm() {
+        return inSet(new Die(Die.WORM));
+    }
+
     public int getValue() {
+        if(!hasWorm())
+            return 0;
         int v = 0;
         for(Map.Entry<Die, Integer> entry : frequency.entrySet())
             v += entry.getValue() * entry.getKey().getValue();
         return v;
     }
+
+    public Die highest() {
+        return frequency.lastKey();
+    }
+
+    /*
+    public int compareTo(DiceSet other) {
+        return frequency.compareTo(other.frequency);
+    }
+    */
 }
 
