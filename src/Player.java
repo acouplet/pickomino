@@ -18,8 +18,7 @@ class Player {
     }
 
     public Player(Intelligence intelligence) {
-        String name = "Player " + playerCount;
-        Player(name, intelligence);
+        this("Player " + playerCount, intelligence);
     }
 
     public int getId() {
@@ -34,20 +33,38 @@ class Player {
         return name;
     }
 
+    public boolean equals(Object o) {
+        return id == ((Player)o).getId();
+    }
+
+    public Tile[] getTileStack() {
+        return (Tile[])(tileStack.toArray());
+    }
+
+    public Intelligence getIntelligence() {
+        return intelligence;
+    }
+
     public Tile getTopTile() {
-        return tileStack.peek();
+        if(tileStack.empty()) 
+            return null;
+        else
+            return tileStack.peek();
+    }
+
+    public Tile popTile() {
+        if(tileStack.empty())
+            return null;
+        else {
+            Tile t = tileStack.pop();
+            score -= t.getNbWorms();
+            return t;
+        }
     }
 
     public void pushTile(Tile t) {
         tileStack.push(t);
-    }
-
-    public Tile popTile() {
-        return tileStack.pop();
-    }
-
-    public boolean equals(Object o) {
-        return id == ((Player)o).getId();
+        score += t.getNbWorms();
     }
 }
 

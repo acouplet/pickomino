@@ -9,15 +9,15 @@ class EmptyAI extends Intelligence {
 
     }
 
-    public boolean rollOrStop(Map<Die, Integer> dice) {
+    public boolean rollOrStop(DiceSet dice) {
         return false;
     }
 
-    public Tile chooseTile(Map<Die, Integer> dice) {
+    public Tile chooseTile(DiceSet dice) {
         return null;
     }
 
-    public Die chooseDice(Map<Die, Integer> dice, Map<Die, Integer> roll) {
+    public Die chooseDice(DiceSet dice, DiceSet roll) {
         return null;
     }
 

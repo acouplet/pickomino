@@ -21,7 +21,7 @@ class Die implements Comparable<Die> {
     }
     
     public int getValue() {
-    	return min(face,WORM-1);
+    	return Math.min(face, WORM-1);
     }
 
     public void roll() {

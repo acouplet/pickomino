@@ -23,7 +23,7 @@ class Tile implements Comparable<Tile> {
     }
     
     public String toString(){
-    	return String.format("[%d;%d]", id, nbWorms);;
+    	return String.format("[%d;%d]", id, nbWorms);
     }
 }
 

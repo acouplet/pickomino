@@ -15,8 +15,8 @@ class Human extends Intelligence {
 		}
 		System.out.format("%n");	
 		System.out.format("Opponent's score and upper tile : %n");
-		for(int i = 0; i<nbPlayers-1; i++){
-			if (tileStacks[i].length != 0)
+		for(int i = 0; i < nbPlayers-1; i++) {
+			if (tileStacks[i].length == 0)
 				System.out.format("\t%s : [score = %02d]%n", names[i], scores[i]);
 			else
 				System.out.format("\t%s : [score = %02d ; upper tile = %s]%n", names[i], scores[i], tileStacks[i][0]);
@@ -24,15 +24,18 @@ class Human extends Intelligence {
 		System.out.format("%n%n");
     }
 
-    public boolean rollOrStop(TreeMap<Die, Integer> dice) {
+    public boolean rollOrStop(DiceSet dice) {
     	int dice_sum = 0;
     	
+        // TODO: implémenter toString() dans DiceSet
+        /*
     	System.out.format("You currently have : [");
     	for (Map.Entry<Die, Integer> entry : dice.entrySet()){
     		System.out.format("%dx%d ", entry.getValue(), entry.getKey().getValue());
     		dice_sum += entry.getValue() * entry.getKey().getValue();
 		}
 		System.out.format("%n");
+        */
 		
     	while (true) {
 	    	System.out.format("What do you want to do?%n\t1) Roll the dice%n\t2)Take a tile%nDecision : ");
@@ -43,29 +46,23 @@ class Human extends Intelligence {
 	    		return false;
 	    }
 	    
-        return false;
     }
 
-    public Tile chooseTile(TreeMap<Die, Integer> dice) {
-    	int dice_sum = 0;
+    public Tile chooseTile(DiceSet dice) {
+    	int dice_sum = dice.getValue();
     	
-    	for (Map.Entry<Die, Integer> entry : dice.entrySet()){
-    		dice_sum += entry.getValue() * entry.getKey().getValue();
-		}
-		
+        /*
     	TreeSet<Tile> eligibleTiles = new TreeSet<Tile>();
-    	for(Tile t : gameTiles){
+    	for(Tile t : gameTiles) {
     		if (t.getId() <= dice_sum)
     			eligibleTiles.add(t);
     	}
-    	
-    	
-    	
+        */
     	
         return null;
     }
 
-    public Die chooseDice(TreeMap<Die, Integer> dice, TreeMap<Die, Integer> roll) {
+    public Die chooseDice(DiceSet dice, DiceSet roll) {
         return null;
     }
 
