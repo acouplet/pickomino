@@ -21,5 +21,9 @@ class Tile implements Comparable<Tile> {
     public int compareTo(Tile other) {
         return Integer.compare(this.id, other.id);
     }
+    
+    public String toString(){
+    	return String.format("[%d;%d]", id, nbWorms);;
+    }
 }
 
