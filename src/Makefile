@@ -2,7 +2,7 @@ JFLAGS = -g
 JC = javac
 BINDIR = ../bin
 
-sources = $(wildcard *.java)
+sources = $(wildcard *.java) $(wildcard **/*.java)
 classes = $(sources:.java=.class)
 
 all: $(classes)
