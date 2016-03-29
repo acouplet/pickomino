@@ -17,6 +17,11 @@ class Player {
         this.intelligence = intelligence;
     }
 
+    public Player(Intelligence intelligence) {
+        String name = "Player " + playerCount;
+        Player(name, intelligence);
+    }
+
     public int getId() {
         return id;
     }
@@ -39,6 +44,10 @@ class Player {
 
     public Tile popTile() {
         return tileStack.pop();
+    }
+
+    public boolean equals(Object o) {
+        return id == ((Player)o).getId();
     }
 }
 
