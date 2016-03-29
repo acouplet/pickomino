@@ -1,5 +1,6 @@
 class Die implements Comparable<Die> {
     public static final int NB_FACES = 6;
+    public static final int WORM = NB_FACES;
 
     private int face;
 
@@ -10,9 +11,17 @@ class Die implements Comparable<Die> {
     public Die() {
         face = randomFace();
     }
+    
+    public Die(int face) {
+    	this.face = face;
+    }
 
     public int getFace() {
         return face;
+    }
+    
+    public int getValue() {
+    	return min(face,WORM-1);
     }
 
     public void roll() {
